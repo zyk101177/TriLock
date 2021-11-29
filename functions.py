@@ -1,8 +1,3 @@
-# ================================.=================================== #
-# SunLock functions
-# Author: Yuke Zhang
-# Jun. 16 2021
-# ================================.=================================== #
 from tkinter import _flatten
 import os
 import math
