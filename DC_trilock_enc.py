@@ -1,9 +1,3 @@
-#####################################################################
-# SunLock - w/o state re-encode
-# 1. generate behavioral verilog with SunLock parameters
-# Author: Yuke Zhang
-# Jun. 16 2021
-#####################################################################
 import os
 import shutil
 import functions
