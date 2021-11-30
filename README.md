@@ -15,7 +15,7 @@ The tool has been successfully tested on macOS Catalina and .
 # Encryption Flow
 
 Before state re-encoding
-1. Step 1: Prepare a bench_names.txt file.
+1. Step 1: Prepare a `bench_names.txt` file.
 2. Step 2: Run `python3 DC_trilock_enc.py`
 3. Step 3: Enter the folder DC_noreencode and open a terminal there. Run the following commands:
         
