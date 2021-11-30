@@ -74,6 +74,9 @@ def genDC_renencoding():
                 functions.write_reencode_files(folder, bench, kd, kf, umin, errbit, rule2_factor, ratio, se_list, so_list, reencode_dffs)
                 t2 = time.process_time()
                 print('complete: {0}_kd{1}_kf{2}_umin{3}_errbit{4}_fcf{5}_r{6}, time: {7}'.format(bench, kd, kf, umin, errbit, rule2_factor, ratio, t2 - t1))
+    
+    if os.path.exists('./mdf_v'):
+        shutil.rmtree('./mdf_v')
 
 if __name__ == '__main__':
     genDC_renencoding()
