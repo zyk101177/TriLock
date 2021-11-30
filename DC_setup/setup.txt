@@ -1,0 +1,24 @@
+set search_path [ list . \
+                  ${synopsys_root}/libraries/syn \
+                  ${synopsys_root}/dw/sim_ver \
+		  ./lib]
+
+# set target_library "NangateOpenCellLibrary_typical.db"
+# set synthetic_library [list dw_foundation.sldb standard.sldb ]
+# set link_library [list * NangateOpenCellLibrary_typical.db dw_foundation.sldb standard.sldb ]
+
+set target_library "NangateOpenCellLibrary_typical.db"
+set synthetic_library "NangateOpenCellLibrary_typical.db"
+set link_library "NangateOpenCellLibrary_typical.db"
+
+set command_log_file  "./command.log"
+set designer  ""
+set company  "University of Southern California"
+
+set view_command_log_file  "./view_command.log"
+set verilogout_no_tri "true"
+set verilogout_equation "false"
+set write_name_nets_same_as_ports true
+set verilogout_show_unconnected_pins "TRUE"
+
+#set hdlin_presto_net_name_prefix "n"
