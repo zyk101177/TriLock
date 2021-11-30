@@ -18,7 +18,7 @@ Before state re-encoding
 
 1. Step 1: Prepare a `bench_names.txt` file.
 2. Step 2: Run `python3 DC_trilock_enc.py`.
-3. Step 3: Enter the folder DC_noreencode and open a terminal there. Run the following commands:
+3. Step 3: Enter the folder `./DC_noreencode` and open a terminal there. Run the following commands:
         
         dc_shell
         source setup.txt
@@ -28,7 +28,7 @@ State re-encoding
 
 4. Step 4: Copy the folder `./DC_noreencode/netlists` to `./netlists`.
 5. Step 5: Run `python3 DC_state_reencode.py`.
-6. Step 6: Enter the folder DC_reencode and open a termnal there. Run the following commands:
+6. Step 6: Enter the folder `./DC_reencode` and open a termnal there. Run the following commands:
         
         dc_shell
         source setupt.txt
