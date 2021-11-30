@@ -12,7 +12,7 @@ The tool has been successfully tested on macOS Catalina and .
 4. All the tool dependencies required by the above tools.
 
 
-# Operational Flow
+# Encryption Flow
 
 Before state re-encoding
 1. Step 1: Prepare a bench_names.txt file.
