@@ -14,7 +14,14 @@ The tool has been successfully tested on macOS Catalina and .
 
 # Encryption Flow
 
-Before state re-encoding
+Using Design Compiler as the synthesis tool.
+1. Prepare a `bench_names.txt` file.
+2. Run the command:
+
+        python3 Trilock_enc.py
+
+
+Using 
 
 1. Step 1: Prepare a `bench_names.txt` file.
 2. Step 2: Run `python3 DC_trilock_enc.py`.
