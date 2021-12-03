@@ -1,4 +1,4 @@
-bench	kd	kf	umin	errbit	rule2_factor	ratio
+bench	kd	kf	umin	errbit	rule2_factor	r
 s9234	0	0	0	0	0	0
 s38584	0	0	0	0	0	0
 s35932	0	0	0	0	0	0
