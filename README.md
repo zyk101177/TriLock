@@ -20,7 +20,7 @@ Using Design Compiler as the synthesis tool.
 
         python3 Trilock_enc.py
 
-
+<!-- 
 Using 
 
 1. Step 1: Prepare a `bench_names.txt` file.
@@ -28,7 +28,6 @@ Using
 3. Step 3: Enter the folder `./DC_noreencode` and open a terminal there. Run the following commands:
         
         dc_shell
-        source setup.txt
         source run.tcl
 
 State re-encoding
@@ -39,7 +38,7 @@ State re-encoding
         
         dc_shell
         source setupt.txt
-        source run_sr.tcl
+        source run_sr.tcl -->
 
 
 # Sample Outputs
