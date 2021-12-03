@@ -1,3 +1,9 @@
+#####################################################################
+# SunLock - w/o state re-encode
+# 1. generate behavioral verilog with SunLock parameters
+# Author: Yuke Zhang
+# Jun. 16 2021
+#####################################################################
 import os
 import shutil
 import functions
@@ -20,7 +26,7 @@ def genDC_main():
     # if not os.path.exists('./DC/lib'):
     #     os.makedirs('./DC/lib')
 
-    shutil.copy('./DC_setup/setup.txt', './DC_noreencode/')
+    #shutil.copy('./DC_setup/setup.txt', './DC_noreencode/')
     shutil.copy('./DC_setup/run.tcl', './DC_noreencode/')
     shutil.copytree('./DC_setup/lib', './DC_noreencode/lib')
     shutil.copytree('./ori', './DC_noreencode/ori')

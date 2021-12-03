@@ -1,4 +1,9 @@
-from tkinter import _flatten
+# ================================.=================================== #
+# SunLock functions
+# Author: Yuke Zhang
+# Jun. 16 2021
+# ================================.=================================== #
+
 import os
 import math
 import numpy as np
@@ -84,14 +89,14 @@ def modify_ori_verilog(bench):
     # print(st_module, st_input, st_output, st_wire, end_wire)
 
     input = bench_ori[st_input:st_output]
-    input = list(_flatten(input))
+    input = [item for sublist in input for item in sublist]
     input = [re.sub('[,;)]', '', item) for item in input]
     input.remove('input')
     input.remove('clk')
     input.remove('reset')
 
     output = bench_ori[st_output:st_wire]
-    output = list(_flatten(output))
+    output = [item for sublist in output for item in sublist]
     output = [re.sub('[,;)]', '', item) for item in output]
     output.remove('output')
 
@@ -102,7 +107,7 @@ def modify_ori_verilog(bench):
     output_module = output + ['nxt_state', 'state']
 
     wire = bench_ori[st_wire:end_wire]
-    wire = list(_flatten(wire))
+    wire = [item for sublist in wire for item in sublist]
 
     # print('input: ', input)
     # print(input_module)

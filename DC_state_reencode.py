@@ -1,3 +1,8 @@
+#####################################################################
+# TriLock - w/ state re-encode
+# Author: Yuke Zhang
+# Aug. 12 2021
+#####################################################################
 import os
 import shutil
 
@@ -6,7 +11,7 @@ import circuitfuncs
 import functions
 import time
 
-def genDC_renencoding():
+def genDC_reencoding():
     folder = './DC_reencode/'
     if os.path.exists(folder):
         shutil.rmtree(folder)
@@ -18,8 +23,8 @@ def genDC_renencoding():
         os.makedirs(folder+'netlists')
 
 
-    shutil.copy('./DC_setup/setup.txt', folder)
-    shutil.copy('./DC_setup/run_sr.tcl', folder)
+    #shutil.copy('./DC_setup/setup.txt', folder)
+    shutil.copy('./DC_setup/sr.tcl', folder)
     shutil.copytree('./DC_setup/lib', folder+'lib')
     # shutil.copytree('./ori', folder+'ori')
 
@@ -74,12 +79,10 @@ def genDC_renencoding():
                 functions.write_reencode_files(folder, bench, kd, kf, umin, errbit, rule2_factor, ratio, se_list, so_list, reencode_dffs)
                 t2 = time.process_time()
                 print('complete: {0}_kd{1}_kf{2}_umin{3}_errbit{4}_fcf{5}_r{6}, time: {7}'.format(bench, kd, kf, umin, errbit, rule2_factor, ratio, t2 - t1))
-    
-    if os.path.exists('./mdf_v'):
-        shutil.rmtree('./mdf_v')
+
 
 if __name__ == '__main__':
-    genDC_renencoding()
+    genDC_reencoding()
 
 
 
