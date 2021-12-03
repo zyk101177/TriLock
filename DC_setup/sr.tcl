@@ -23,7 +23,6 @@ set verilogout_show_unconnected_pins "TRUE"
 
 #set hdlin_presto_net_name_prefix "n"
 
-
 proc syn {bench design design_name} {
 set clk_period 5;
 set posedge 0.0;
@@ -92,7 +91,7 @@ while {[gets $fid line] > -1} {
 		syn $bench $design $design_name	
 	} else {
 		set design ${bench}_enc
-		set design_name ${bench}_kd${kd}_kf${kf}_umin${u}_errbit${errbit}_fcf${fcf}_r0
+		set design_name ${bench}_kd${kd}_kf${kf}_umin${u}_errbit${errbit}_fcf${fcf}_r${r}
 		puts "bench: $bench, design: $design, design_name: $design_name"
 		syn $bench $design $design_name
 		}	
