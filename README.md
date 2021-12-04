@@ -1,7 +1,7 @@
 # TriLock
 
 This repo contains the source code for TriLock.
-Our paper **TriLock: IC Protection with Tunable Corruptibility and Resilience to SAT and Removal Attacks ** (accepted by DATE'22) will come soon.
+Our paper **TriLock: IC Protection with Tunable Corruptibility and Resilience to SAT and Removal Attacks** (accepted by DATE'22) will come soon.
 
 # Tool Dependency
 
@@ -18,7 +18,7 @@ The tool has been successfully tested on macOS Catalina and .
 # Operational Flow
 
 Using Design Compiler as the synthesis tool.
-1. Put the original verilog, e.g. abc.v, in `./ori/abc_ori/abc_ori.v`. The top module name should be `abc_ori.v`. All the provided samples are synthesized by Design Compiler with Nangate as the library.
+1. Put the verilog of the original circuit, e.g. abc.v, in `./ori/abc_ori/abc_ori.v`. The top module name should be `abc_ori.v`.
 
 2. Prepare a `bench_names.txt` file.
    Please refer to the `bench_names.txt` for the file format. Each line begins with the bench name following by the encryption parameters. 
@@ -45,16 +45,16 @@ Using Design Compiler as the synthesis tool.
         s9234   1       1       3       5       60      5
 
 
-
 3. Run the command:
 
         python3 Trilock_enc.py
 
+4. The locked netlists without state re-encoding could be found in `./DC_noreencode/netlists`, and the locked netlists with state re-encoding could be found in `./DC_reencode/netlists`.
 
 The operational flow with ohter synthesis tools will come soon.
 
-<!-- 
-Using 
+
+<!-- Using 
 
 1. Step 1: Prepare a `bench_names.txt` file.
 2. Step 2: Run `python3 DC_trilock_enc.py`.
@@ -73,10 +73,9 @@ State re-encoding
         source setupt.txt
         source run_sr.tcl -->
 
+<!-- # Sample Outputs
 
-# Sample Outputs
-
-Before state re-encoding:
+Python outputs before state re-encoding:
 
     s9234 1 1 3 60 0 correct key: ['11011011010', '10000001001'] cpu time: 0.004350000000000076
     s9234 2 1 5 60 0 correct key: ['11010000001', '01011111111', '01011100111'] cpu time: 0.0034240000000000936
@@ -90,4 +89,4 @@ State re-encoding:
     complete: s9234_kd1_kf1_umin3_errbit5_fcf60_r7, time: 0.014961999999999698
     complete: s9234_kd2_kf1_umin5_errbit5_fcf60_r10, time: 0.013735999999999748
     complete: s38584_kd1_kf1_umin3_errbit5_fcf60_r10, time: 0.1388639999999981
-    complete: s38584_kd2_kf1_umin5_errbit5_fcf60_r10, time: 0.12760800000000216
+    complete: s38584_kd2_kf1_umin5_errbit5_fcf60_r10, time: 0.12760800000000216 -->
