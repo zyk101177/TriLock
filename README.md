@@ -18,7 +18,7 @@ The tool has been successfully tested on macOS Catalina and .
 # Operational Flow
 
 Using Design Compiler as the synthesis tool.
-1. Put the verilog of the original circuit, e.g. abc.v, in `./ori/abc_ori/abc_ori.v`. The top module name should be `abc_ori.v`.
+1. Put the verilog of the original circuit, e.g. xxx.v, in `./ori/xxx_ori/xxx_ori.v`. The top module name should be `abc_ori.v` and the verilog file should be renamed as `xxx_ori.v`.
 
 2. Prepare a `bench_names.txt` file.
    Please refer to the `bench_names.txt` for the file format. Each line begins with the bench name following by the encryption parameters. 
@@ -32,12 +32,12 @@ Using Design Compiler as the synthesis tool.
         
    A bench name following the all-zero parameters indicates synthesis of the original circuit.
    
-   If the parameter 'r' is not 0 for a bench, two lines are required. After setting all other parameters, the first line should end up with 0 of 'r', and the second line should end with the desired 'r'. For example, to lock the bench 's9234' with 'kd'= 1, 'kf' = 1, 'umin'=3, 'errbit' = 5, 'fc = 60', 'r=1', following lines should be included in the 'bench_names.txt' in order:
+   If the parameter 's' is not 0 for a bench, two lines are required. After setting all other parameters, the first line should end up with 0 of 's', and the second line should end with the desired 's'. For example, to lock the bench 's9234' with 'kd'= 1, 'kf' = 1, 'umin'=3, 'errbit' = 5, 'fc = 60', 's=1', following lines should be included in the 'bench_names.txt' in order:
    
         s9234   1       1       3       5       60      0
         s9234   1       1       3       5       60      1
 
-   If multiple 'r' are designed for the same remaining parameters, only one line with 'r=0' is required before the desired values. For example, to lock the bench 's9234' with 'kd'=1, 'kf'=1, 'umin'=3, 'errbit'=5, 'fc=60', 'r= 3, 4, 5', following lines should be included in the 'bench_names.txt':
+   If multiple 's' are designed for the same remaining parameters, only one line with 's=0' is required before the desired values. For example, to lock the bench 's9234' with 'kd'=1, 'kf'=1, 'umin'=3, 'errbit'=5, 'fc=60', 's= 3, 4, 5', following lines should be included in the 'bench_names.txt':
    
         s9234   1       1       3       5       60      0
         s9234   1       1       3       5       60      3
