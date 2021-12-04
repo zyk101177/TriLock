@@ -18,7 +18,7 @@ The tool has been successfully tested on macOS Catalina and .
 # Operational Flow
 
 Using Design Compiler as the synthesis tool.
-1. Put the verilog of the original circuit, e.g. xxx.v, in `./ori/xxx_ori/xxx_ori.v`. The top module name should be `abc_ori.v` and the verilog file should be renamed as `xxx_ori.v`.
+1. Rename the verilog file of the original circuit from `xxx.v` to `xxx_ori.v`. The top module name should be `xxx_ori`. Put `xxx_ori.v` in the folder `./ori/xxx_ori/`. 
 
 2. Prepare a `bench_names.txt` file.
    Please refer to the `bench_names.txt` for the file format. Each line begins with the bench name following by the encryption parameters. 
