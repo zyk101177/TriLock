@@ -1,24 +1,57 @@
 # TriLock
 
 This repo contains the source code for TriLock.
+Our paper **TriLock: IC Protection with Tunable Corruptibility and Resilience to SAT and Removal Attacks ** (accepted by DATE'22) will come soon.
 
 # Tool Dependency
 
 The tool has been successfully tested on macOS Catalina and .
 
 1. ``Python 3.6`` or higher version
-2. `Design Compiler.` Other synthesis tools are open for test.
-3. `Circuitgraph`(https://github.com/circuitgraph/circuitgraph)
-4. All the tool dependencies required by the above tools.
+2. `Design Compiler (DC)` Other synthesis tools are open for test.
+3. `Nangate Open Cell Library` (https://si2.org/open-cell-library/)
+4. `Circuitgraph`(https://github.com/circuitgraph/circuitgraph)
+5. `NetworkX` (https://networkx.org/)
+6. All the tool dependencies required by the above tools.
 
 
-# Encryption Flow
+# Operational Flow
 
 Using Design Compiler as the synthesis tool.
-1. Prepare a `bench_names.txt` file.
-2. Run the command:
+1. Put the original verilog, e.g. abc.v, in `./ori/abc_ori/abc_ori.v`. The top module name should be `abc_ori.v`. All the provided samples are synthesized by Design Compiler with Nangate as the library.
+
+2. Prepare a `bench_names.txt` file.
+   Please refer to the `bench_names.txt` for the file format. Each line begins with the bench name following by the encryption parameters. 
+   
+        kd: the length of the key sequence setting SAT-attack resilience.
+        kf: the length of the key sequence tuning functional corruptibility.
+        umin: the minimum unrolling count. Specifically, umin = 2*kd +kf.
+        errbit: the number of bit of the error signal.
+        fc: used to tune functional corruptibility. Functional Corruptibility \approx fc/100.
+        s: the number of DFFs involved in state re-encoding.
+        
+   A bench name following the all-zero parameters indicates synthesis of the original circuit.
+   
+   If the parameter 'r' is not 0 for a bench, two lines are required. After setting all other parameters, the first line should end up with 0 of 'r', and the second line should end with the desired 'r'. For example, to lock the bench 's9234' with 'kd'= 1, 'kf' = 1, 'umin'=3, 'errbit' = 5, 'fc = 60', 'r=1', following lines should be included in the 'bench_names.txt' in order:
+   
+        s9234   1       1       3       5       60      0
+        s9234   1       1       3       5       60      1
+
+   If multiple 'r' are designed for the same remaining parameters, only one line with 'r=0' is required before the desired values. For example, to lock the bench 's9234' with 'kd'=1, 'kf'=1, 'umin'=3, 'errbit'=5, 'fc=60', 'r= 3, 4, 5', following lines should be included in the 'bench_names.txt':
+   
+        s9234   1       1       3       5       60      0
+        s9234   1       1       3       5       60      3
+        s9234   1       1       3       5       60      4
+        s9234   1       1       3       5       60      5
+
+
+
+3. Run the command:
 
         python3 Trilock_enc.py
+
+
+The operational flow with ohter synthesis tools will come soon.
 
 <!-- 
 Using 
